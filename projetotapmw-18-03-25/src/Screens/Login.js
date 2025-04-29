@@ -21,7 +21,7 @@ const Login = () => {
                     <span>
                         E-mail:
                     </span>
-                    <input type="text" name="displayName" required placeholder="E-mail" />
+                    <input type="email" name="displayName" required placeholder="E-mail" />
                 </label>
                 <label>
                     <span>
