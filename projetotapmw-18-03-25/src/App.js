@@ -5,6 +5,7 @@ import Login from './Screens/Login';
 import Contact from './Screens/Contact';
 import About from './Screens/About';
 import Cadastrar from './Screens/Register'
+import Product from './Screens/Product'
 import NavBar from './components/Navbar';//ifydtfuygujipkjhgyfdtryughjkl,
 //importante (add pelo prof, serve pra afirma as rotas)
  
@@ -25,6 +26,7 @@ function App() {
             <Route path="/register" element={<Cadastrar />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/product" element={<Product />} />
           </Routes>
         </main>
       </BrowserRouter>

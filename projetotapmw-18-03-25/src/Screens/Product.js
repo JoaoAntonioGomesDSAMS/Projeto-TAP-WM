@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import styles from './Register.module.css';
+import styles from './Product.module.css';
 import { useAuthentication } from '../hooks/useAuthentication';
  
 const Register = () => {
   useEffect(() => {
-    document.title = "Cadastrar"
+    document.title = "Cadastrar Produto"
   }, [])
  
 const [displayName, setName]=useState('');
