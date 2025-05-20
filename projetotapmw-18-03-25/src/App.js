@@ -26,7 +26,7 @@ function App() {
             <Route path="/register" element={<Cadastrar />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/product" element={<Product/>} />
           </Routes>
         </main>
       </BrowserRouter>

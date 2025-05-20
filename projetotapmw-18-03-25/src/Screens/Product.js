@@ -1,73 +1,45 @@
 import { useState, useEffect } from 'react';
 import styles from './Product.module.css';
-import { useAuthentication } from '../hooks/useAuthentication';
- 
-const Register = () => {
-  useEffect(() => {
-    document.title = "Cadastrar Produto"
-  }, [])
- 
-const [displayName, setName]=useState('');
-const [displayEmail, setEmail]  = useState('');
-const [displayPassword, setPassword]  = useState('');
-const [displayConfirm, setConfirm]  = useState('');
-const [error, setError] = useState('');
-const {createUser, error: authError, loading} = useAuthentication();
- 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("")
- 
-    const user = {
-        displayName,
-        displayEmail,
-        displayPassword
-    }
- 
-    if (displayPassword !== displayConfirm) {
-        setError("As senhas precisam ser iguais!")
-        return
-    }
-    const res = await createUser(user);
-}
- 
-  return (
+import Register from './Register';
+
+const Product = () => {
+
+    return (
         <div>
-            <h2>Cadastre-se para ter Acesso ao Site</h2>
-            <form onSubmit={handleSubmit}>
+            <h2>Cadastre a loja!</h2>
+            <form>
                 <label>
                     <span>
                         Nome:
                     </span>
-                    <input type="text" name="displayName" required placeholder="Nome do Usuário" value={displayName} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" name="displayNomeLoja" required placeholder="Nome da Loja" 
+                     />
                 </label>
                 <label>
                     <span>
-                        E-mail:
+                        Endereço:
                     </span>
-                    <input type="email" name="displayEmail" required placeholder="E-mail" value={displayEmail} onChange={(e) => setEmail(e.target.value)}/>
+                    <input type="text" name="displayEnderecoLoja" required placeholder="Endereço da Loja" 
+                    />
                 </label>
                 <label>
                     <span>
-                        Senha:
+                        Cidade:
                     </span>
-                    <input type="password" name="displayPassword" required placeholder="Senha" value={displayPassword} onChange={(e) => setPassword(e.target.value)}/>
+                    <input type="text" name="displayCidadeLoja" required placeholder="Cidade" 
+                    />
                 </label>
                 <label>
                     <span>
-                        Confirmar Senha:
+                        Estado:
                     </span>
-                    <input type="password" name="displayConfirm" required placeholder="Repetir Senha" value={displayConfirm} onChange={(e) => setConfirm(e.target.value)}/>
+                    <input type="text" name="displayEstadoLoja" required placeholder="Estado" 
+                    />
                 </label>
-                   {!loading && <button className="btn">Cadastrar</button>}
-        {loading &&  <button className="btn" disabled>Aguarde...</button>}
-        {error && <p className="error">{error}</p>}
-                {error && <p className="error">{error}</p>}
+                {<button className="btn">Cadastrar Loja</button>}
             </form>
         </div>
     )
 }
  
- 
- 
-export default Register
+export default Product
